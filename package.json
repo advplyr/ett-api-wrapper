@@ -1,0 +1,11 @@
+{
+  "name": "ett-api-wrapper",
+  "version": "1.0.0",
+  "description": "Node API Wrapper for Eleven VR Table Tennis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "advplyr",
+  "license": "ISC"
+}
