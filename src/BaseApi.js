@@ -1,13 +1,21 @@
 const https = require('https')
+const http = require('http')
 
 class BaseApi {
   constructor() {
-    this.baseUrl = 'https://www.elevenvr.club/'
+    this.baseUrl = 'https://www.elevenvr.club'
   }
 
   request(endpoint) {
+    const url = `${this.baseUrl}${endpoint}`
+    return this.getRequest(url)
+  }
+
+  getRequest(url) {
+    console.log(`request: ${url}`)
     return new Promise((resolve, reject) => {
-      https.get(`${this.baseUrl}${endpoint}`, res => {
+      const protocol = url.startsWith('https') ? https : http
+      protocol.get(url, res => {
         let data = []
 
         if (res.statusCode == 404) {
